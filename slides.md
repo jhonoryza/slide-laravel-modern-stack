@@ -11,7 +11,11 @@ mdc: true
 
 # The Modern Laravel Stack & The Backend-Driven Approach
 
-## ---b v layout: image-right image: /kit.png backgroundSize: cover
+---
+layout: image-right 
+image: /kit.png 
+backgroundSize: cover
+---
 
 # The Modern Laravel Stack
 
@@ -95,6 +99,15 @@ layout: full
 
 ## Flutter
 
+<div class="flex items-center gap-4">
+    <img src="https://juststickers.in/wp-content/uploads/2019/01/flutter.png" 
+        class="w-12"
+    />
+    <img src="https://www.nicepng.com/png/detail/259-2592669_ios-android-icon-png-clip-art-free-ios.png"
+        class="w-12"
+    />
+</div>
+
 ```dart
 children: [
     Column(
@@ -169,7 +182,9 @@ layout: split
 
 the table builder code generate this table UI
 
-![table builder](./public/ehh.png)
+![table builder](./public/ehh1.png)
+
+![table builder](./public/ehh2.png)
 
 ::right::
 
@@ -178,6 +193,30 @@ the table builder code generate this table UI
 declarative syntax
 
 ```php
+return $table
+    ->columns([
+        Tables\Columns\TextColumn::make('title')
+            ->searchable()
+            ->sortable(),
+        Tables\Columns\IconColumn::make('is_published')->boolean(),
+        Tables\Columns\TextColumn::make('published_at')
+            ->dateTime()
+            ->sortable()
+            ->toggleable(isToggledHiddenByDefault: false),
+    ])
+    ->filters([
+        SelectFilter::make('is_published')
+            ->options([
+                true => 'Yes',
+                false => 'No',
+            ])
+    ])
+    ->actions([Tables\Actions\EditAction::make()])
+    ->bulkActions([
+        Tables\Actions\BulkActionGroup::make([
+            Tables\Actions\DeleteBulkAction::make(),
+        ]),
+    ]);
 ```
 
 ---
@@ -194,11 +233,12 @@ layout: split
 
 # Inertia
 
+[Inertia](https://inertiajs.com) is a new approach to building classic server-driven web apps. We call it the modern monolith.
 A tool that connects a server-side framework (like Laravel) to a client-side
 framework (like React, Vue, or Svelte) without the complexity of building a full
 API.
 
-![inertia](./public/livewire.png)
+![inertia](./public/inertia.png)
 
 ::right::
 
@@ -212,18 +252,31 @@ dynamically loads the correct frontend component without a full page reload.
 
 Perfect for building modern Single-Page Applications (SPAs) with the power of a
 client-side framework, but with the routing and data management handled by
-Laravel.
+server side framework (like Laravel).
 
 ```php
 public function show(Permission $permission): Response
 {
-    return Inertia::render('builder/show', [
-        'fields' => $this->getFormFields($permission, true),
+    return Inertia::render('permissions/show', [
+        'permission' => $permission,
         'routeName' => 'permissions',
         'routeId' => $permission->id,
     ]);
 }
 ```
+
+---
+layout: image-right 
+image: /kit.png 
+backgroundSize: cover
+---
+
+# Laravel starter kit.
+
+- [Inertia React](https://laravel.com/docs/12.x/starter-kits#react)
+- [Inertia Vue](https://laravel.com/docs/12.x/starter-kits#vue)
+
+![starter kit](./public/kit1.png)
 
 ---
 layout: split
@@ -237,8 +290,6 @@ A package to build inertia react/vue ui with backend driven approach.
 
 Directly inspired by FilamentPHP's powerful and efficient backend-driven
 approach.
-
-### Key Features
 
 - **Declarative UI Construction:** Define forms and data tables in your Laravel
   controllers.
@@ -258,13 +309,16 @@ approach.
 The structure of the UI (e.g., form fields, table columns) is defined in PHP
 controller classes, and a generic set of React components renders the final UI.
 
-### Key Technologies
+# Requirement
 
-- **Laravel**
-- **Inertia.js**
-- **React**
-- **TypeScript**
-- **TailwindCSS**
+- PHP >= 8.4
+- Laravel >= 12
+- Nodejs & npm >= 20
+- Tailwind 4
+- Laravel
+  [official starter kit with React](https://laravel.com/docs/12.x/starter-kits#react)
+
+currently not supported for `official vue starter kit`
 
 ---
 layout: split
@@ -275,6 +329,8 @@ layout: split
 # Datatable Example
 
 Define your entire data table in the `index` method of your controller.
+
+![table](./public/builder.png)
 
 ::right::
 
@@ -319,6 +375,8 @@ layout: split
 
 Define the fields for your create/edit forms in a reusable private method.
 
+![table](./public/builder1.png)
+
 ::right::
 
 ```php
@@ -362,6 +420,8 @@ layout: split
 Here is how to set up a dependent dropdown for `City` based on the selected
 `Province`.
 
+![depend](./public/depend.png)
+
 ::right::
 
 ```php
@@ -386,34 +446,6 @@ private function getFormFields(?Subdistrict $s = null): array
     ];
 }
 ```
-
----
-layout: split
----
-
-::right::
-
-# Project Structure
-
-- **`src/Inertia/Fields`**: PHP classes for the **Form Builder**.
-- **`src/Inertia/Tables`**: PHP classes for the **Datatable Builder**.
-- **`resources/js/pages/builder`**: Generic Inertia page components
-  (`index.tsx`, `create.tsx`, `edit.tsx`).
-- **`resources/js/components/builder`**: Reusable React components
-  (`app-datatable.tsx`, `app-form-builder.tsx`).
-
-::left::
-
-# Requirement
-
-- PHP >= 8.4
-- Laravel >= 12
-- Nodejs & npm >= 20
-- Tailwind 4
-- Laravel
-  [official starter kit with React](https://laravel.com/docs/12.x/starter-kits#react)
-
-currently not supported for `official vue starter kit`
 
 ---
 layout: split
