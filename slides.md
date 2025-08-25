@@ -279,6 +279,18 @@ backgroundSize: cover
 ![starter kit](./public/kit1.png)
 
 ---
+layout: full
+---
+
+# Market offer ?
+
+| Stack    | Declarative syntax and backend driven | Free | React | Vue | Blade | Features                           | Style    |
+| -------- | ----------------------------------- | ---- | ----- | --- | ----- | ---------------------------------- | -------- |
+| Livewire | FilamentPHP                         | Yes  | No    | No  | Yes   | Table, Form, Panel, Action, Widget | Tailwind |
+| Inertia  | Inertia UI                          | No   | Yes   | Yes | No    | Table, Modal                       | Tailwind |
+<!-- | Inertia  | Inertia Builder                     | Yes  | Yes   | No  | No    | Table, Form                        | Tailwind | -->
+
+---
 layout: split
 ---
 
@@ -286,7 +298,7 @@ layout: split
 
 # Inertia Builder
 
-A package to build inertia react/vue ui with backend driven approach.
+A package to build inertia react/vue/svelte ui with backend driven approach.
 
 Directly inspired by FilamentPHP's powerful and efficient backend-driven
 approach.
@@ -316,9 +328,9 @@ controller classes, and a generic set of React components renders the final UI.
 - Nodejs & npm >= 20
 - Tailwind 4
 - Laravel
-  [official starter kit with React](https://laravel.com/docs/12.x/starter-kits#react)
+  [official react starter kit](https://laravel.com/docs/12.x/starter-kits#react)
 
-currently not supported for `official vue starter kit`
+currently not supported in `official vue/svelte starter kit`
 
 ---
 layout: split
@@ -525,18 +537,6 @@ Then recompile the frontend:
 ```bash
 npm run dev
 ```
-
----
-layout: full
----
-
-# Summary
-
-| Stack    | Declarative syntax & Backend driven | Free | React | Vue | Blade | Features                           | Style    |
-| -------- | ----------------------------------- | ---- | ----- | --- | ----- | ---------------------------------- | -------- |
-| Livewire | FilamentPHP                         | Yes  | No    | No  | Yes   | Table, Form, Panel, Action, Widget | Tailwind |
-| Inertia  | Inertia UI                          | No   | Yes   | Yes | No    | Table, Modal                       | Tailwind |
-| Inertia  | Inertia Builder                     | Yes? | Yes   | No  | No    | Table, Form                        | Tailwind |
 
 ---
 layout: 'intro'
