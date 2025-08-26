@@ -12,8 +12,8 @@ mdc: true
 # The Modern Laravel Stack & The Backend-Driven Approach
 
 ---
-layout: image-right 
-image: /kit.png 
+layout: image-right
+image: /kit.png
 backgroundSize: cover
 ---
 
@@ -31,6 +31,8 @@ layout: split
 
 ::left::
 
+<div v-click class="transition-all duration-500">
+
 # Livewire
 
 [Livewire](https://livewire.laravel.com) is a package for Laravel that allows
@@ -39,7 +41,11 @@ you to build dynamic interfaces using PHP, similar to
 
 ![livewire](./public/livewire.png)
 
+</div>
+
 ::right::
+
+<div v-click class="transition-all duration-500">
 
 ## **How it works:**
 
@@ -54,42 +60,65 @@ component and sends the updated HTML back to the client.
 - Distinct separation server code (livewire) and client code (javascript or
   [alpinejs](https://alpinejs.dev))
 
+</div>
+
 ---
-layout: split
+layout: table-layout
+columns: 8
 ---
 
+::title::
+Community
 ::left::
-
-# FilamentPHP
-
-- [Filament](https://filamentphp.com) is a Server-Driven UI framework for
-  Laravel.
-- Define UI entirely in PHP using structured objects.
-- Built on Livewire, Alpine.js, Tailwind CSS.
-
-![Filament Logo](/filament.png)
-
-### What is Server-Driven UI?
-
-- SDUI is a proven architecture used by Meta, Airbnb, Shopify.
-- Server controls UI, allows faster iteration & centralized logic.
-
-::right::
-
-# Why it was created?
-
-- To rapidly build beautiful admin panels and forms.
-- Provides a pre-built architecture for common application UIs.
-
-# The Approach
-
-It follows a **backend-driven** or **declarative** approach.
-
-1. You define the entire structure of your UI (forms, fields, table columns,
-   actions) in PHP classes.
-2. Filament then takes care of rendering the corresponding Blade and Livewire
-   components on the frontend.
-3. You build complex interfaces without touching frontend code.
+<th>Package</th>
+<th>Backend driven</th>
+<th>Declarative</th>
+<th>Form Builder</th>
+<th>Table Builder</th>
+<th>CRUD Generator</th>
+<th>UI Component</th>
+<th>Free / Paid</th>
+::body::
+<tr>
+  <td>Backpack</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅ (basic)</td>
+  <td>✅</td>
+  <td>❌ (terbatas)</td>
+  <td>Paid</td>
+</tr>
+<tr>
+  <td>FilamentPHP</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>Free (MIT)</td>
+</tr>
+<tr>
+  <td>WireUI</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>✅</td>
+  <td>Free (MIT)</td>
+</tr>
+<tr>
+  <td>TallStackUI</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>✅</td>
+  <td>Free</td>
+</tr>
 
 ---
 layout: full
@@ -97,16 +126,22 @@ layout: full
 
 # Declarative Approach
 
+<div v-click class="transition-all duration-500">
+
 ## Flutter
 
 <div class="flex items-center gap-4">
-    <img src="https://juststickers.in/wp-content/uploads/2019/01/flutter.png" 
+    <img src="https://juststickers.in/wp-content/uploads/2019/01/flutter.png"
         class="w-12"
     />
     <img src="https://www.nicepng.com/png/detail/259-2592669_ios-android-icon-png-clip-art-free-ios.png"
         class="w-12"
     />
 </div>
+
+</div>
+
+<div v-click class="transition-all duration-500">
 
 ```dart
 children: [
@@ -128,6 +163,61 @@ children: [
     ...
 ```
 
+</div>
+
+---
+layout: split
+---
+
+::left::
+
+# FilamentPHP
+
+<div v-click class="transition-all duration-500">
+
+- [Filament](https://filamentphp.com) is a Server-Driven UI framework for
+  Laravel.
+- Define UI entirely in PHP using structured objects.
+- Built on Livewire, Alpine.js, Tailwind CSS.
+
+![Filament Logo](/filament.png)
+
+</div>
+
+<div v-click class="transition-all duration-500">
+
+### What is Server-Driven UI?
+
+- SDUI is a proven architecture used by Meta, Airbnb, Shopify.
+- Server controls UI, allows faster iteration & centralized logic.
+
+</div>
+
+::right::
+
+<div v-click class="transition-all duration-500">
+
+# Why it was created?
+
+- To rapidly build beautiful admin panels and forms.
+- Provides a pre-built architecture for common application UIs.
+
+</div>
+
+<div v-click class="transition-all duration-500">
+
+# The Approach
+
+It follows a **backend-driven** or **declarative** approach.
+
+1. You define the entire structure of your UI (forms, fields, table columns,
+   actions) in PHP classes.
+2. Filament then takes care of rendering the corresponding Blade and Livewire
+   components on the frontend.
+3. You build complex interfaces without touching frontend code.
+
+</div>
+
 ---
 layout: split
 ---
@@ -135,42 +225,49 @@ layout: split
 ::left::
 
 # Example
+
+<div v-click class="transition-all duration-500">
 
 the form builder code generate this form UI
 
 ![ehh](./public/ehh.png)
 
+</div>
+
 ::right::
 
 # Form Builder
 
+<div v-click class="transition-all duration-500">
+
 declarative syntax
 
 ```php
-Forms\Components\Tabs\Tab::make('Indonesia')
-    ->schema([
-        Forms\Components\TextInput::make('title.id')
-            ->label('Title')
-            ->lazy()
-            ->afterStateUpdated(
-                fn (Forms\Set $set, ?string $state) => $set(
-                    'slug.id',
-                    Str::slug($state)
-                )
-            )
-            ->required(),
-        Forms\Components\TextInput::make('slug.id')
-            ->label('Slug')
-            ->required(),
-        Forms\Components\Textarea::make('description.id')
-            ->label('Description')
-            ->rows(3),
-        Forms\Components\RichEditor::make('content.id')
-            ->label('Content')
-            ->required()
-            ->maxLength(65535),
+Tab::make('Indonesia')
+->schema([
+    TextInput::make('title.id')
+        ->label('Title')
+        ->lazy()
+        ->afterStateUpdated(
+            function ($set, $state) {
+                $set('slug.id', Str::slug($state));
+            }
+        )
+        ->required(),
+    TextInput::make('slug.id')
+        ->label('Slug')
+        ->required(),
+    Textarea::make('description.id')
+        ->label('Description')
+        ->rows(3),
+    RichEditor::make('content.id')
+        ->label('Content')
+        ->required()
+        ->maxLength(65535),
 ])
 ```
+
+</div>
 
 ---
 layout: split
@@ -179,6 +276,8 @@ layout: split
 ::left::
 
 # Example
+
+<div v-click class="transition-all duration-500">
 
 the table builder code generate this table UI
 
@@ -186,38 +285,44 @@ the table builder code generate this table UI
 
 ![table builder](./public/ehh2.png)
 
+</div>
+
 ::right::
 
 # Table Builder
 
+<div v-click class="transition-all duration-500">
+
 declarative syntax
 
 ```php
-return $table
-    ->columns([
-        Tables\Columns\TextColumn::make('title')
-            ->searchable()
-            ->sortable(),
-        Tables\Columns\IconColumn::make('is_published')->boolean(),
-        Tables\Columns\TextColumn::make('published_at')
-            ->dateTime()
-            ->sortable()
-            ->toggleable(isToggledHiddenByDefault: false),
-    ])
-    ->filters([
-        SelectFilter::make('is_published')
-            ->options([
-                true => 'Yes',
-                false => 'No',
-            ])
-    ])
-    ->actions([Tables\Actions\EditAction::make()])
-    ->bulkActions([
-        Tables\Actions\BulkActionGroup::make([
-            Tables\Actions\DeleteBulkAction::make(),
-        ]),
-    ]);
+->columns([
+    TextColumn::make('title')
+        ->searchable(),
+    IconColumn::make('is_published')
+        ->label('Published')
+        ->boolean(),
+    TextColumn::make('published_at')
+        ->dateTime()
+        ->sortable()
+        ->toggleable(isToggledHiddenByDefault: false),
+])
+->filters([
+    SelectFilter::make('is_published')
+        ->options([
+            true => 'Yes',
+            false => 'No',
+        ])
+])
+->actions([EditAction::make()])
+->bulkActions([
+    BulkActionGroup::make([
+        DeleteBulkAction::make(),
+    ]),
+]);
 ```
+
+</div>
 
 ---
 layout: image
@@ -233,16 +338,22 @@ layout: split
 
 # Inertia
 
-[Inertia](https://inertiajs.com) is a new approach to building classic server-driven web apps. We call it the modern monolith.
-A tool that connects a server-side framework (like Laravel) to a client-side
-framework (like React, Vue, or Svelte) without the complexity of building a full
-API.
+<div v-click class="transition-all duration-500">
+
+[Inertia](https://inertiajs.com) is a new approach to building classic
+server-driven web apps. We call it the modern monolith. A tool that connects a
+server-side framework (like Laravel) to a client-side framework (like React,
+Vue, or Svelte) without the complexity of building a full API.
 
 ![inertia](./public/inertia.png)
+
+</div>
 
 ::right::
 
 # How it works
+
+<div v-click class="transition-all duration-500">
 
 You build standard Laravel controllers that return Inertia responses. These
 responses include the page component name and its data (props). Inertia then
@@ -265,9 +376,11 @@ public function show(Permission $permission): Response
 }
 ```
 
+</div>
+
 ---
-layout: image-right 
-image: /kit.png 
+layout: image-right
+image: /kit.png
 backgroundSize: cover
 ---
 
@@ -279,22 +392,104 @@ backgroundSize: cover
 ![starter kit](./public/kit1.png)
 
 ---
-layout: full
+layout: split
 ---
 
-# Market offer ?
+::left::
+<div v-click class="transition-all duration-500"> 
+    <h2>Style</h2>
+    <ul>
+        <li><a href="https://tailwindcss.com">https://tailwindcss.com</a></li>
+    </ul>
+</div>
 
-| Stack    | Declarative syntax and backend driven | Free | React | Vue | Blade | Features                           | Style    |
-| -------- | ----------------------------------- | ---- | ----- | --- | ----- | ---------------------------------- | -------- |
-| Livewire | FilamentPHP                         | Yes  | No    | No  | Yes   | Table, Form, Panel, Action, Widget | Tailwind |
-| Inertia  | Inertia UI                          | No   | Yes   | Yes | No    | Table, Modal                       | Tailwind |
-<!-- | Inertia  | Inertia Builder                     | Yes  | Yes   | No  | No    | Table, Form                        | Tailwind | -->
+::right::
+<div v-click class="transition-all duration-500"> 
+    <h2>UI Components</h2>
+    <ul>
+        <li><a href="https://ui.shadcn.com">https://ui.shadcn.com</a></li>
+    </ul>
+</div>
+
+<div v-click class="transition-all duration-500"> 
+    <h2>Shadcn Theme</h2>
+    <ul>
+        <li><a href="https://tweakcn.com/editor/theme">https://tweakcn.com/editor/theme</a></li>
+        <li><a href="https://shadcnstudio.com/theme-generator">https://ui.shadcn.com</a></li>
+        <li><a href="https://ui.jln.dev">https://ui.shadcn.com</a></li>
+    </ul>
+</div>
+
+---
+layout: table-layout
+columns: 8
+---
+
+::title::
+Community
+
+::left::
+<th>Nama</th>
+<th>Support</th>
+<th>Backend driven</th>
+<th>Declarative</th>
+<th>CRUD Generator</th>
+<th>Form Builder</th>
+<th>Table Builder</th>
+<th>UI Component</th>
+<th>Free / Paid</th>
+::body::
+<tr>
+  <td><strong>Laravel Nova</strong></td>
+  <td>Vue</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td><strong>Paid</strong></td>
+</tr>
+<tr>
+  <td><strong>InertiaUI</strong></td>
+  <td>React/Vue</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>✅</td>
+  <td>✅ (sedikit)</td>
+  <td><strong>Paid</strong></td>
+</tr>
+<tr>
+  <td><strong>Craftable PRO</strong></td>
+  <td>Vue</td>
+  <td>❌</td>
+  <td>✅ (semi)</td>
+  <td>✅</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td><strong>Paid</strong></td>
+</tr>
+<tr v-click class="transition-all duration-500">
+  <td><strong>Inertia Builder</strong></td>
+  <td>React</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td><strong>Free</strong></td>
+</tr>
 
 ---
 layout: split
 ---
 
 ::left::
+<div v-click class="transition-all duration-500">
 
 # Inertia Builder
 
@@ -313,8 +508,11 @@ approach.
 - **Relationship Handling:** Automatically populate fields and table columns
   from Eloquent relationships.
 - **Customizable:** Extend the library with your own custom fields and filters.
+</div>
 
 ::right::
+
+<div v-click class="transition-all duration-500">
 
 # Core Concept: Backend-Driven UI
 
@@ -331,6 +529,7 @@ controller classes, and a generic set of React components renders the final UI.
   [official react starter kit](https://laravel.com/docs/12.x/starter-kits#react)
 
 currently not supported in `official vue/svelte starter kit`
+</div>
 
 ---
 layout: split
@@ -338,44 +537,47 @@ layout: split
 
 ::left::
 
-# Datatable Example
+# Table Builder
+
+<div v-click class="transition-all duration-500">
 
 Define your entire data table in the `index` method of your controller.
 
 ![table](./public/builder.png)
 
+</div>
+
 ::right::
 
-```php
-// PostController.php
-public function index(): Response
-{
-    $table = Table::make(Post::class)
-        ->columns([
-            TableColumn::make('id')->sortable(),
-            TableColumn::make('title')->searchable()->sortable(),
-            TableColumn::make('author.name')->label('Author')->searchable(),
-            TableColumn::make('published')->renderUsing(fn ($value) => $value ? 'Yes' : 'No'),
-            TableColumn::make('published_at')->sortable(),
-        ])
-        ->filters([
-            Filter::text('title'),
-            Filter::select('author.name')->label('Author')
-                ->relationship(User::class, 'name', 'name'),
-            Filter::date('published_at'),
-        ])
-        ->defaultSort('id', 'desc')
-        ->actions([
-            Action::make('new')->needRowSelected(false),
-            Action::make('delete')->message('Delete this post?'),
-        ]);
+<div v-click class="transition-all duration-500">
 
-    return Inertia::render('builder/index', [
-        'data' => $table,
-        'routeName' => 'posts',
+```php
+Table::make(Post::class)
+    ->columns([
+        TableColumn::make('title')
+            ->searchable(),
+        TableColumn::make('author.name')
+            ->label('Author')
+            ->sortable(),
+        TableColumn::make('published')
+            ->renderUsing(fn ($state) => $state ? 'Yes' : 'No'),
+    ])
+    ->filters([
+        Filter::select('author.name')
+            ->label('Author')
+            ->relationship(User::class, 'name', 'name'),
+        Filter::date('published_at'),
+    ])
+    ->defaultSort('id', 'desc')
+    ->actions([
+        Action::make('new')
+            ->needRowSelected(false),
+        Action::make('delete')
+            ->message('Delete this post?'),
     ]);
-}
 ```
+
+</div>
 
 ---
 layout: split
@@ -383,49 +585,47 @@ layout: split
 
 ::left::
 
-# Form Example
+# Form Builder
+
+<div v-click class="transition-all duration-500">
 
 Define the fields for your create/edit forms in a reusable private method.
 
 ![table](./public/builder1.png)
 
+</div>
+
 ::right::
 
+<div v-click class="transition-all duration-500">
+
 ```php
-// PostController.php
-private function getFormFields(?Post $post = null): array
-{
-    return [
-        Field::text('title')
-            ->defaultValue($post?->title),
-        Field::textarea('description')
-            ->defaultValue($post?->description),
-        Field::markdown('content')
-            ->defaultValue($post?->content),
-        Field::select('category_id')
-            ->label('Category')
-            ->relationship(Category::class, 'name'),
-        Field::select('author_id')
-            ->label('Author')
-            ->searchable()
-            ->relationship(User::class, 'name'),
-        Field::toggle('published')
-            ->label('Published ?'),
-        Field::flatpickr('published_at')
-            ->date(),
-        Field::tags('tags')
-            ->defaultValue($post?->tags),
-        Field::file('thumbnail')
-            ->defaultValue($post?->thumbnail),
-    ];
-}
+Form::make()
+    ->model($category)
+    ->schema([
+        Field::text('name')
+            ->formatStateUsing(fn ($state) => ucwords($state))
+            ->reactive()
+            ->afterStateUpdated(function ($state, Set $set) {
+                $set('slug', Str::slug($state));
+            }),
+        Field::text('slug'),
+            ->hidden(function (Get $get) {
+                return $get('name') == 'Aa';
+            }),
+        Field::flatpickr('published_at'),
+    ]);
 ```
+
+</div>
 
 ---
 layout: split
 ---
 
 ::left::
+
+<div v-click class="transition-all duration-500">
 
 # Dependent Dropdowns Example
 
@@ -434,30 +634,31 @@ Here is how to set up a dependent dropdown for `City` based on the selected
 
 ![depend](./public/depend.png)
 
+</div>
+
 ::right::
 
+<div v-click class="transition-all duration-500">
+
 ```php
-private function getFormFields(?Subdistrict $s = null): array
-{
-    $provinceId = request()->input('province_id') ?: $s?->district?->city?->province_id;
+Field::select('province_id')
+    ->label('Province')
+    ->relationship(Province::class, 'name')
+    ->reactive(),
 
-    return [
-        Field::select('province_id')
-            ->label('Province')
-            ->relationship(Province::class, 'name')
-            ->reactive() // Mark as reactive
-            ->defaultValue($provinceId),
-
-        Field::select('city_id')
-            ->label('City')
-            ->placeholder('Select Province first')
-            ->relationship(City::class, 'name')
-            // Depends on 'province_id'
-            ->dependsOn('province_id', 'province_id', $provinceId)
-            ->defaultValue($cityId),
-    ];
-}
+Field::select('city_id')
+    ->label('City')
+    ->placeholder('Select Province first')
+    ->relationship(
+        modelClass: City::class, 
+        titleAttr: 'name', 
+        modifyQueryUsing: function ($query, $get) {
+            $provinceId = $get('province_id');
+            $query->where('province_id', $provinceId);
+        }),
 ```
+
+</div>
 
 ---
 layout: split
@@ -467,12 +668,18 @@ layout: split
 
 # Getting Started
 
+<div v-click class="transition-all duration-500">
+
 ### 1. Install Package
 
 ```bash
 composer require jhonoryza/laravel-inertia-builder
 php artisan inertia-builder:install
 ```
+
+</div>
+
+<div v-click class="transition-all duration-500">
 
 ### 2. Add Toaster Component
 
@@ -487,9 +694,13 @@ import { Toaster } from "@/components/ui/sonner";
 </AppLayoutTemplate>;
 ```
 
+</div>
+
 ::right::
 
-### 3. Configure Middleware
+<div v-click class="transition-all duration-500">
+
+### 3. Configure Middleware HandleInertiaRequests
 
 `app/Http/Middleware/HandleInertiaRequests.php`
 
@@ -501,7 +712,6 @@ public function share(Request $request): array
         'flash' => [
             'success' => fn() => $request->session()->get('success'),
             'error' => fn() => $this->getErrMessage($request),
-            'description' => fn() => $request->session()->get('description'),
         ],
     ];
 }
@@ -517,6 +727,8 @@ private function getErrMessage(Request $request): string
 }
 ```
 
+</div>
+
 ---
 layout: split
 ---
@@ -525,7 +737,8 @@ layout: split
 
 # Generator Scaffolding
 
-Generate Model, Factory, Controller, Request, and Routes from reading a database table.
+Generate Model, Factory, Controller, Request, and Routes from reading a database
+table.
 
 ```bash
 # Example for a 'posts' table
