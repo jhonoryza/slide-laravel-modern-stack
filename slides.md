@@ -63,64 +63,6 @@ component and sends the updated HTML back to the client.
 </div>
 
 ---
-layout: table-layout
-columns: 8
----
-
-::title::
-Community
-::left::
-<th>Package</th>
-<th>Backend driven</th>
-<th>Declarative</th>
-<th>Form Builder</th>
-<th>Table Builder</th>
-<th>CRUD Generator</th>
-<th>UI Component</th>
-<th>Free / Paid</th>
-::body::
-<tr>
-  <td>Backpack</td>
-  <td>✅</td>
-  <td>✅</td>
-  <td>✅</td>
-  <td>✅ (basic)</td>
-  <td>✅</td>
-  <td>❌ (terbatas)</td>
-  <td>Paid</td>
-</tr>
-<tr>
-  <td>FilamentPHP</td>
-  <td>✅</td>
-  <td>✅</td>
-  <td>✅</td>
-  <td>✅</td>
-  <td>✅</td>
-  <td>✅</td>
-  <td>Free (MIT)</td>
-</tr>
-<tr>
-  <td>WireUI</td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>✅</td>
-  <td>Free (MIT)</td>
-</tr>
-<tr>
-  <td>TallStackUI</td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>✅</td>
-  <td>Free</td>
-</tr>
-
----
 layout: full
 ---
 
@@ -165,6 +107,68 @@ children: [
 
 </div>
 
+---
+layout: split
+---
+
+::left::
+
+# Declarative Approach
+
+<div v-click class="transition-all duration-500">
+
+## Swiftui
+
+<div class="flex items-center gap-4">
+    <img src="/swiftui.jpg"
+        class="w-12"
+    />
+</div>
+
+</div>
+
+<div v-click class="transition-all duration-500">
+
+<div class="flex items-center gap-4">
+    <img src="/swiftui2.png" />
+</div>
+
+</div>
+
+::right::
+
+<div v-click class="transition-all duration-500">
+
+```swift
+var body: some View {
+        VStack(spacing: 0) {
+            // Toolbar
+            HStack {
+                Text(settings.lastOpenedFileURL?.lastPathComponent ?? "Untitled")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                
+                Spacer()
+                
+                Button("Save") {
+                    showSavePanel()
+                }
+                .keyboardShortcut("s", modifiers: [.command, .shift])
+
+                Button("Open") {
+                    showOpenPanel()
+                }
+                .keyboardShortcut("o", modifiers: .command)
+
+                Button(action: runCode) {
+                    HStack(spacing: 4) {
+                        Image(systemName: "play.fill")
+                        Text("Run Code")
+                    }
+                }
+```
+
+</div>
 ---
 layout: split
 ---
@@ -331,6 +335,64 @@ backgroundSize: contain
 ---
 
 ---
+layout: table-layout
+columns: 8
+---
+
+::title::
+Community
+::left::
+<th>Package</th>
+<th>Backend driven</th>
+<th>Declarative</th>
+<th>Form Builder</th>
+<th>Table Builder</th>
+<th>CRUD Generator</th>
+<th>UI Component</th>
+<th>Free / Paid</th>
+::body::
+<tr>
+  <td>Backpack</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅ (basic)</td>
+  <td>✅</td>
+  <td>❌ (terbatas)</td>
+  <td>Paid</td>
+</tr>
+<tr>
+  <td>FilamentPHP</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>Free (MIT)</td>
+</tr>
+<tr>
+  <td>WireUI</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>✅</td>
+  <td>Free (MIT)</td>
+</tr>
+<tr>
+  <td>TallStackUI</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>✅</td>
+  <td>Free</td>
+</tr>
+
+---
 layout: split
 ---
 
@@ -396,27 +458,28 @@ layout: split
 ---
 
 ::left::
-<div v-click class="transition-all duration-500"> 
+<div v-click class="transition-all duration-500">
     <h2>Style</h2>
     <ul>
-        <li><a href="https://tailwindcss.com">https://tailwindcss.com</a></li>
+        <li><a target="_blank" href="https://tailwindcss.com">https://tailwindcss.com</a></li>
     </ul>
 </div>
 
 ::right::
-<div v-click class="transition-all duration-500"> 
+<div v-click class="transition-all duration-500">
     <h2>UI Components</h2>
     <ul>
-        <li><a href="https://ui.shadcn.com">https://ui.shadcn.com</a></li>
+        <li><a target="_blank" href="https://ui.shadcn.com">https://ui.shadcn.com</a></li>
     </ul>
 </div>
 
-<div v-click class="transition-all duration-500"> 
+<div v-click class="transition-all duration-500">
     <h2>Shadcn Theme</h2>
     <ul>
-        <li><a href="https://tweakcn.com/editor/theme">https://tweakcn.com/editor/theme</a></li>
-        <li><a href="https://shadcnstudio.com/theme-generator">https://ui.shadcn.com</a></li>
-        <li><a href="https://ui.jln.dev">https://ui.shadcn.com</a></li>
+        <li><a target="_blank" href="https://tweakcn.com/editor/theme">https://tweakcn.com/editor/theme</a></li>
+        <li><a target="_blank" href="https://shadcnstudio.com/theme-generator">https://shadcnstudio.com/theme-generator</a></li>
+        <li><a target="_blank" href="https://ui.jln.dev">https://ui.jln.dev</a></li>
+        <li><a target="_blank" href="https://tailscan.com/colors">https://tailscan.com/colors</a></li>
     </ul>
 </div>
 
@@ -474,7 +537,7 @@ Community
 </tr>
 <tr v-click class="transition-all duration-500">
   <td><strong>Inertia Builder</strong></td>
-  <td>React</td>
+  <td>React/Vue</td>
   <td>✅</td>
   <td>✅</td>
   <td>✅</td>
@@ -526,9 +589,7 @@ controller classes, and a generic set of React components renders the final UI.
 - Nodejs & npm >= 20
 - Tailwind 4
 - Laravel
-  [official react starter kit](https://laravel.com/docs/12.x/starter-kits#react)
-
-currently not supported in `official vue/svelte starter kit`
+  [laravel starter kit](https://laravel.com/docs/12.x/starter-kits)
 </div>
 
 ---
@@ -604,7 +665,7 @@ Form::make()
     ->model($category)
     ->schema([
         Field::text('name')
-            ->formatStateUsing(fn ($state) => ucwords($state))
+            ->state(fn ($state) => ucwords($state))
             ->reactive()
             ->afterStateUpdated(function ($state, Set $set) {
                 $set('slug', Str::slug($state));
@@ -650,8 +711,8 @@ Field::select('city_id')
     ->label('City')
     ->placeholder('Select Province first')
     ->relationship(
-        modelClass: City::class, 
-        titleAttr: 'name', 
+        modelClass: City::class,
+        titleAttr: 'name',
         modifyQueryUsing: function ($query, $get) {
             $provinceId = $get('province_id');
             $query->where('province_id', $provinceId);
@@ -670,7 +731,9 @@ layout: split
 
 <div v-click class="transition-all duration-500">
 
-### 1. Install Package
+## 1. Install Package
+
+<a target="_blank" href="https://github.com/jhonoryza/laravel-inertia-builder">Github</a>
 
 ```bash
 composer require jhonoryza/laravel-inertia-builder
@@ -679,63 +742,11 @@ php artisan inertia-builder:install
 
 </div>
 
-<div v-click class="transition-all duration-500">
-
-### 2. Add Toaster Component
-
-`resources/js/layouts/app.layout.tsx`
-
-```tsx
-import { Toaster } from "@/components/ui/sonner";
-
-<AppLayoutTemplate {...props}>
-    <Toaster />
-    {children}
-</AppLayoutTemplate>;
-```
-
-</div>
-
 ::right::
 
 <div v-click class="transition-all duration-500">
 
-### 3. Configure Middleware HandleInertiaRequests
-
-`app/Http/Middleware/HandleInertiaRequests.php`
-
-```php
-public function share(Request $request): array
-{
-    return [
-        // ...
-        'flash' => [
-            'success' => fn() => $request->session()->get('success'),
-            'error' => fn() => $this->getErrMessage($request),
-        ],
-    ];
-}
-
-private function getErrMessage(Request $request): string
-{
-    /** @var ViewErrorBag $errors */
-    $errors = $request->session()->get('errors');
-    if ($errors) {
-        return collect($errors->getMessages())->flatten()->implode(', ');
-    }
-    return '';
-}
-```
-
-</div>
-
----
-layout: split
----
-
-::left::
-
-# Generator Scaffolding
+## 2. Generator
 
 Generate Model, Factory, Controller, Request, and Routes from reading a database
 table.
@@ -750,6 +761,7 @@ Then recompile the frontend:
 ```bash
 npm run dev
 ```
+</div>
 
 ---
 layout: 'intro'

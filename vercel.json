@@ -1,7 +1,9 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "builds": [
+    { "src": "dist/**", "use": "@vercel/static" }
   ],
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "routes": [
+    { "src": "/(.*)", "dest": "/dist/$1" }
+  ]
 }
+
