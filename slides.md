@@ -9,7 +9,7 @@ transition: slide-left
 mdc: true
 ---
 
-# Build FullStack Apps using Backend-Driven Approach
+# Building Full-Stack Apps with a Backend-Driven Approach
 
 ---
 layout: image-right
