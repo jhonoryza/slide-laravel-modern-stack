@@ -9,7 +9,7 @@ transition: slide-left
 mdc: true
 ---
 
-# The Modern Laravel Stack & The Backend-Driven Approach
+# Build FullStack Apps using Backend-Driven Approach
 
 ---
 layout: image-right
@@ -17,7 +17,7 @@ image: /kit.png
 backgroundSize: cover
 ---
 
-# The Modern Laravel Stack
+# Case: Laravel Framework
 
 A quick look at the tools that shape modern Laravel development.
 
